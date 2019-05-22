@@ -1,0 +1,46 @@
+<div class="qam-account-items clearfix" style="display: block;">
+	<form action="./login?to=" method="post">
+		<input type="text" name="emailhandle" dir="auto" placeholder="Email or Username">
+		<input type="password" name="password" dir="auto" placeholder="Password">
+		<div><input type="checkbox" name="remember" id="qam-rememberme" value="1">
+			<label for="qam-rememberme">Remember</label></div>
+			<input type="hidden" name="code" value="">
+			<input type="submit" value="Login" class="qa-form-tall-button qa-form-tall-button-login" name="dologin">
+		</form>
+		<div class="qa-nav-user">
+			<ul class="qa-nav-user-list">
+				<li class="qa-nav-user-item qa-nav-user-facebook-login">
+					<span class="qa-nav-user-nolink">	<span id="fb-root" style="display:inline;" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter.php?version=44#channel=f258c6e00e0af3&amp;origin=https%3A%2F%2Fwww.question2answer.org" style="border: none;"></iframe></div></div></span>
+					<script>
+						window.fbAsyncInit = function() {
+							FB.init({
+								appId  : '158644244176280',
+								status : true,
+								cookie : true,
+								xfbml  : true,
+								oauth  : true
+							});
+
+							FB.Event.subscribe('auth.login', function(response) {
+								setTimeout("window.location='https:\/\/www.question2answer.org\/qa\/facebook-login?to=https%3A%2F%2Fwww.question2answer.org%2Fqa%2F'", 100);
+							});
+						};
+						(function(d){
+							var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+							js = d.createElement('script'); js.id = id; js.async = true;
+							js.src = "//connect.facebook.net/en_US/all.js";
+							d.getElementsByTagName('head')[0].appendChild(js);
+						}(document));
+					</script>
+					<span class="fb-login-button fb_iframe_widget" style="display:inline; vertical-align:middle;" size="medium" scope="email,user_about_me,user_location,user_website" login_text="
+					" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=158644244176280&amp;container_width=0&amp;locale=en_US&amp;login_text=%0A%09&amp;scope=email%2Cuser_about_me%2Cuser_location%2Cuser_website&amp;sdk=joey&amp;size=medium"><span style="vertical-align: bottom; width: 64px; height: 22px;"><iframe name="f1099d03e3d522c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:login_button Facebook Social Plugin" src="https://www.facebook.com/plugins/login_button.php?app_id=158644244176280&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D44%23cb%3Df21dc5fcc56fc3%26domain%3Dwww.question2answer.org%26origin%3Dhttps%253A%252F%252Fwww.question2answer.org%252Ff258c6e00e0af3%26relation%3Dparent.parent&amp;container_width=0&amp;locale=en_US&amp;login_text=%0A%09&amp;scope=email%2Cuser_about_me%2Cuser_location%2Cuser_website&amp;sdk=joey&amp;size=medium" style="border: none; visibility: visible; width: 64px; height: 22px;" class=""></iframe></span></span>
+				</span>
+			</li>
+			<li class="qa-nav-user-item qa-nav-user-register">
+				<a href="./register?to=" class="qa-nav-user-link">Register</a>
+			</li>
+		</ul>
+		<div class="qa-nav-user-clear">
+		</div>
+	</div>
+</div>
