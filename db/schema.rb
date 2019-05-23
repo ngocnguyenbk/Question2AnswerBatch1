@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190523022857) do
+ActiveRecord::Schema.define(version: 20190523065102) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "questions_id"
+    t.index ["questions_id"], name: "index_answers_on_questions_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
@@ -29,6 +31,16 @@ ActiveRecord::Schema.define(version: 20190523022857) do
     t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.string "title"
+    t.text "content"
+    t.integer "view"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -51,7 +63,9 @@ ActiveRecord::Schema.define(version: 20190523022857) do
     t.index ["user_id"], name: "index_work_experiences_on_user_id"
   end
 
+  add_foreign_key "answers", "questions", column: "questions_id"
   add_foreign_key "answers", "users"
   add_foreign_key "comments", "users"
+  add_foreign_key "questions", "users"
   add_foreign_key "work_experiences", "users"
 end
