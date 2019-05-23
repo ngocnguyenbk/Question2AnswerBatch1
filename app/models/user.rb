@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :work_experiences, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :answers, dependent: :destroy
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username,  presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
   validates :fullname, presence: true, length: { minimum: 20 }

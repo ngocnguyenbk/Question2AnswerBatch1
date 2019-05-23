@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190522093315) do
+ActiveRecord::Schema.define(version: 20190523022857) do
+
+  create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
@@ -43,6 +51,7 @@ ActiveRecord::Schema.define(version: 20190522093315) do
     t.index ["user_id"], name: "index_work_experiences_on_user_id"
   end
 
+  add_foreign_key "answers", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "work_experiences", "users"
 end
