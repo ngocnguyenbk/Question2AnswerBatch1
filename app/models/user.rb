@@ -1,12 +1,7 @@
 class User < ApplicationRecord
-<<<<<<< b0498fc4fdc88a8bd2ee3aba5617c3bf53765a00
   has_many :work_experiences, dependent: :destroy
   attr_accessor :remember_token
-=======
-  attr_accessor :remember_token, :activation_token
   before_save :downcase_email
-  before_create :create_activation_digest
->>>>>>> Log in
   has_many :questions, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :answers, dependent: :destroy
@@ -41,14 +36,6 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-  def activate
-    update_columns(activated: true, activated_at: Time.zone.now)
-  end
-
-  def send_activated_email
-    UserMailer.account_activation(self).deliver_now
-  end
-
   def authenticated?(remember_token)
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
@@ -67,10 +54,5 @@ class User < ApplicationRecord
   private
     def downcase_email
       self.email = email.downcase
-    end
-
-    def create_activation_digest
-      self.activation_token = User.new_token
-      self.activation_digest = User.digest(activation_token)
     end
 end
