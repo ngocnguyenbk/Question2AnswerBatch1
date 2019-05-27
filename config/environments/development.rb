@@ -65,6 +65,6 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     openssl_verify_mode: 'none',
-    user_name: "bachkhoaeya@gmail.com",
-    password: "19960106Ngoc@"   }
+    user_name: "<%= ENV[EM_USERNAME] %>",
+    password: "<%= ENV[EM_PASSWORD] %>"   }
 end

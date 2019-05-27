@@ -17,7 +17,7 @@ class User < ApplicationRecord
   enum role: [:manager, :member]
   has_secure_password
 
-  # scope :login_scope, ->(a) {where("username = :a OR email = :a", a: "karam112")}
+  scope :login_scope, ->(text) {where("username = :text OR email = :text", text: text)}
   def User.digest(string)
     if (ActiveModel::SecurePassword.min_cost)
       cost = BCrypt::Engine::MIN_COST
