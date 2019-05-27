@@ -2144,6 +2144,10 @@ body{
       min-width: 110px;
       width: auto;
     }
+    .qa-part-form-profile{
+      float: left;
+      width: 65%;
+    }
 
     .qa-part-form-profile .qa-form-wide-data {
       word-break: break-word;
@@ -2176,6 +2180,10 @@ body{
       .qa-template-user .qa-part-form-profile {
         float: left;
       }
+    }
+    .qa-part-form-activity{
+      float: right;
+      width: 30%;
     }
     .qa-part-form-activity h2, .qa-part-message-list h2 {
       margin-top: 0;
