@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
   end
-
+  
   def create
     user = User.find_by(email: user_params[:email]) || User.find_by(username: user_params[:email])
     if user && user.authenticate(user_params[:password])
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       render :new
     end
   end
-
+  
   def destroy
     log_out if logged_in?
     redirect_to root_url
