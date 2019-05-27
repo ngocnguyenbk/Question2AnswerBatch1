@@ -1,0 +1,48 @@
+<div class="qa-main-heading">
+  <h1>
+    User <%= @user.username %>
+  </h1>
+</div>
+<div class="qa-part-form-profile">
+  <table class="qa-form-wide-table">
+    <tbody id="avatar">
+      <tr>
+        <img src="https://www.question2answer.org/qa/?qa=image&qa_blobid=12697203736109131893&qa_size=250" width="100" height="100" class="qa-avatar-image" alt="">
+      </tr>
+    </tbody>
+    <tbody>
+      <tr id="duration">
+        <td class="qa-form-wide-label">
+          Member for:
+        </td>
+        <td class="qa-form-wide-data">
+          <span class="qa-form-wide-static"><%= @user.activated_at%></span>
+        </td>
+      </tr>
+      <tr id="level">
+        <td class="qa-form-wide-label">
+          Type:
+        </td>
+        <td class="qa-form-wide-data">
+          <span class="qa-form-wide-static"><%= @user.activated %></span>
+        </td>
+      </tr>
+      <tr id="userfield-5">
+        <td class="qa-form-wide-label">
+          Q2A site:
+        </td>
+        <td class="qa-form-wide-data">
+          <span class="qa-form-wide-static"></span>
+        </td>
+      </tr>
+      <tr id="userfield-1">
+        <td class="qa-form-wide-label">
+          Full name:
+        </td>
+        <td class="qa-form-wide-data">
+          <span class="qa-form-wide-static"></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
