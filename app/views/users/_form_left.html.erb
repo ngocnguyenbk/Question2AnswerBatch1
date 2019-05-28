@@ -1,0 +1,50 @@
+<div class="qa-part-form-profile">
+  <table class="qa-form-wide-table">
+    <tbody id="avatar">
+      <tr>
+        <%= image_tag "145867.svg", width: 100, height: 100%>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr id="duration">
+        <td class="qa-form-wide-label">
+          Member for:
+        </td>
+        <td class="qa-form-wide-data">
+          <span class="qa-form-wide-static"><%= user.created_at %></span>
+        </td>
+      </tr>
+      <tr id="userfield-1">
+        <td class="qa-form-wide-label">
+          Full name:
+        </td>
+        <td class="qa-form-wide-data">
+          <span class="qa-form-wide-static"><%= user.fullname %></span>
+        </td>
+      </tr>
+      <tr id="userfield-1">
+        <td class="qa-form-wide-label">
+          Change password:
+        </td>
+        <td class="qa-form-wide-data">
+          <button class="btn" data-toggle="collapse" data-target="#target">
+            Click here
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="target" class="collapse">
+    <h2>Change Password</h2>
+    <%= form_for (user) do |f|%>
+      <%= render "shared/error_messages", user: user %>
+
+      <%= f.password_field :oldpassword, class: "form-control", placeholder: "Old password"%>
+      <br>
+      <%= f.password_field :newpassword, class: "form-control", placeholder: "New password"%>
+      <br>
+      <%= f.submit "Change now",  class: "btn btn-success btn-lg btn-block"%>
+    <% end %>
+    <br>
+  </div>
+</div>
