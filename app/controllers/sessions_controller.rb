@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = (User.login_scope user_params[:email]).take
+    user = (User.login_scope user_params[:email_or_username]).take
     if user && user.authenticate(user_params[:password])
       log_in user
       params[:session][:remember_me] == 'remember_value' ? remember(user) : forget(user)
@@ -22,6 +22,6 @@ class SessionsController < ApplicationController
 
   private
     def user_params
-      params.require(:session).permit(:email, :password)
+      params.require(:session).permit(:email_or_username, :password)
     end
 end
