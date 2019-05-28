@@ -3,7 +3,7 @@
   <p class="hint-text">Create your account. It's free and only takes a minute.</p>
   <div class="form-group" >
     <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email, "Email or User name" %>
+      <%= f.label :email, "Email or Username" %>
       <%= f.text_field :email, class: 'form-control' %>
 
       <%= f.label :password %>
