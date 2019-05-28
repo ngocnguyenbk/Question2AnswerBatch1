@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  remember_value = 1
+  REMEMBER_VALUE = 1
   def new
   end
   
@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = (User.login_scope user_params[:email_or_username]).take
     if user && user.authenticate(user_params[:password])
       log_in user
-      params[:session][:remember_me] == 'remember_value' ? remember(user) : forget(user)
+      params[:session][:remember_me] == REMEMBER_VALUE ? remember(user) : forget(user)
       redirect_to root_url
     else
       flash.now[:danger] = "Invalid email/password combination"
