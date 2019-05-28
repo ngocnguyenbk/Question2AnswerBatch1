@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:session).permit(:email_or_username, :password)
-    end
+  def user_params
+    params.require(:session).permit(:email_or_username, :password)
+  end
 end

@@ -49,11 +49,11 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:username, :email, :password)
-    end
+  def user_params
+    params.require(:user).permit(:username, :email, :password)
+  end
 
-    def change_password
-      params.require(:user).permit(:oldpassword, :newpassword)
-    end
+  def change_password
+    params.require(:user).permit(:oldpassword, :newpassword)
+  end
 end
