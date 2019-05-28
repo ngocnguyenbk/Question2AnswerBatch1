@@ -11,7 +11,7 @@
           Member for:
         </td>
         <td class="qa-form-wide-data">
-          <span class="qa-form-wide-static"><%= @user.created_at %></span>
+          <span class="qa-form-wide-static"><%= user.created_at %></span>
         </td>
       </tr>
       <tr id="userfield-1">
@@ -19,7 +19,7 @@
           Full name:
         </td>
         <td class="qa-form-wide-data">
-          <span class="qa-form-wide-static"><%= @user.fullname %></span>
+          <span class="qa-form-wide-static"><%= user.fullname %></span>
         </td>
       </tr>
       <tr id="userfield-1">
@@ -36,8 +36,8 @@
   </table>
   <div id="target" class="collapse">
     <h2>Change Password</h2>
-    <%= form_for (@user) do |f|%>
-      <%= render "shared/error_messages"%>
+    <%= form_for (user) do |f|%>
+      <%= render "shared/error_messages", user: user %>
 
       <%= f.password_field :oldpassword, class: "form-control", placeholder: "Old password"%>
       <br>
