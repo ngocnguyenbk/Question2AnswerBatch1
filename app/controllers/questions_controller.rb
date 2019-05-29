@@ -7,6 +7,10 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
   end
+    @question = Question.find(params[:id])
+  def show
+    
+  end
 
   def create
     @question = current_user.questions.build(question_params)

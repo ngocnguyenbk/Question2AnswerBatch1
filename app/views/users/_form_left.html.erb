@@ -11,7 +11,7 @@
           Member for:
         </td>
         <td class="qa-form-wide-data">
-          <span class="qa-form-wide-static"><%= user.created_at %></span>
+          <span class="qa-form-wide-static"><%= time_ago_in_words(user.created_at) %></span>
         </td>
       </tr>
       <tr id="userfield-1">
@@ -27,9 +27,11 @@
           Change password:
         </td>
         <td class="qa-form-wide-data">
-          <button class="btn" data-toggle="collapse" data-target="#target">
-            Click here
-          </button>
+          <% if current_user?(user) %>
+            <button class="btn" data-toggle="collapse" data-target="#target">
+              Click here
+            </button>
+          <% end %>
         </td>
       </tr>
     </tbody>
