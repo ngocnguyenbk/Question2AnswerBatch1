@@ -12,9 +12,9 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.includes(:tags).find(params[:id])
   end
-    @question = Question.find(params[:id])
-  def show
     
+  def show
+    @question = Question.find(params[:id])
   end
 
   def create
