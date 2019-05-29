@@ -16,14 +16,21 @@
           </div>
           <div class="qa-vote-count qa-vote-count-net">
             <span class="qa-netvote-count">
-              <span class="qa-netvote-count-data"><%= @question.votes.count %></span><span class="qa-netvote-count-pad"> votes <meta itemprop="upvoteCount" content="0"></span>
+              <span class="qa-netvote-count-data">
+                <%= @question.votes.count %>
+              </span>
+              <span class="qa-netvote-count-pad"> votes <meta itemprop="upvoteCount" content="0">
+              </span>
             </span>
           </div>
           <div class="qa-vote-clear">
           </div>
         </div>
         <span class="qa-view-count">
-          <span class="qa-view-count-data"><%= @question.view %></span><span class="qa-view-count-pad"> views</span>
+          <span class="qa-view-count-data">
+            <%= @question.view %>
+          </span>
+          <span class="qa-view-count-pad"> views</span>
         </span>
       </div>
       <input name="code" type="hidden" value="0-1559095240-2e5804a7b3a2a62edccf11ee731c628695081ade">
@@ -33,12 +40,17 @@
         <span class="qa-q-view-meta">
           <%= link_to "asked", question_path(@question) %>
           <span class="qa-q-view-when">
-            <span class="qa-q-view-when-data"><%= time_ago_in_words(@question.created_at) %></span><span class="qa-q-view-when-pad"> ago</span>
+            <span class="qa-q-view-when-data">
+              <%= time_ago_in_words(@question.created_at) %>
+            </span>
+            <span class="qa-q-view-when-pad"> ago</span>
           </span>
           <span class="qa-q-view-who">
             <span class="qa-q-view-who-pad">by </span>
             <span class="qa-q-view-who-data">
-              <span itemprop="name"><%= link_to "#{@question.user.username}", user_path(@question.user) %></span>
+              <span itemprop="name">
+                <%= link_to "#{@question.user.username}", user_path(@question.user) %>
+              </span>
             </span>
           </span>
         </span>
