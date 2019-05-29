@@ -1,0 +1,58 @@
+<%= form_for(@question) do |f| %>
+<div class="container1">
+  <div class="qa-main-heading">
+    <h1>
+      Ask a question
+    </h1>
+  </div>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="qa-part-form">
+    <table class="qa-form-tall-table">
+      <tr>
+        <td class="qa-form-tall-label">
+          The question in one sentence:
+        </td>
+      </tr>
+      <tr>
+        <td class="qa-form-tall-data">
+          <%= f.text_field :title, placeholder: "Question title..." %>
+        </td>
+      </tr>
+      <tr>
+        <td class="qa-form-tall-label">
+          More information for the question:
+        </td>
+      </tr>
+      <tr>
+        <td class="qa-form-tall-label">
+          <%= f.text_area :content, class: "ckeditor"%>
+        </td>
+      </tr>
+      <tr>
+        <td class="qa-form-tall-label">
+          Tags - use hyphens to combine words:
+        </td>
+      </tr>
+      <tr>
+        <td class="qa-form-tall-data">
+          <%= f.fields_for :tag do |ff| %>
+          <tr>
+            <td class="qa-form-tall-data">
+            <%= ff.text_field :content, placeholder: "Tag.." %>
+            </td>
+          </tr>
+          <% end %>
+        </td>
+      </tr>
+      <tbody>
+        <tr>
+          <td colspan="1" class="qa-form-tall-buttons">
+            <%= f.submit "Post", class: "btn btn-primary" %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% end %>
+

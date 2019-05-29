@@ -34,13 +34,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def logged_in_user
-    return if logged_in?
-    
-    flash[:danger] = "Please log in."
-    redirect_to login_url
-  end
-
   def correct_user
     redirect_to(root_url) unless current_user?(@user)
   end

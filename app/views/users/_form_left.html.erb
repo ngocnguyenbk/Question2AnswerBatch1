@@ -37,7 +37,7 @@
   <div id="target" class="collapse">
     <h2>Change Password</h2>
     <%= form_for (user) do |f|%>
-      <%= render "shared/error_messages", user: user %>
+      <%= render "shared/error_messages", object: f.object %>
 
       <%= f.password_field :oldpassword, class: "form-control", placeholder: "Old password"%>
       <br>

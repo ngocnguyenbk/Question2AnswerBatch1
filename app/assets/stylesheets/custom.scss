@@ -251,6 +251,37 @@ body{
     }
 
     .qa-main-heading {
+        position: relative;
+        margin: 0 0 5px;
+        padding: 8px 52px 8px 20px;
+        background: #3498db;
+        color: #fff;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0;
+        font-size: 1.4em;
+        line-height: 1.35em;
+        word-wrap: break-word;
+    }
+    h1 a {
+        color: #fff;
+        line-height: inherit;
+        border: 0;
+        text-decoration: none;
+        opacity: 0.85;
+    }
+    h1 a:hover {
+        border-bottom: 0;
+    }
+    h1 a:hover, h1 a:focus, h1 a:visited {
+        color: #fff;
+        line-height: inherit !important;
+        opacity: 1;
+    }
+
+    .qa-main-heading {
       position: relative;
       margin: 0 0 5px;
       padding: 8px 52px 8px 20px;
