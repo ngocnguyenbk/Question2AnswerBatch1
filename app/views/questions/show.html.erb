@@ -7,33 +7,35 @@
 </div>
 <div class="qa-part-q-view">
   <div class="qa-q-view" id="q75406">
-    <form method="post" >
-      <div class="qa-q-view-stats">
-        <div class="qa-voting qa-voting-net" id="voting_75406">
-          <div class="qa-vote-buttons qa-vote-buttons-net">
-            <input title="Click to vote up" name="vote_75406_1_q75406" type="submit" value="+" class="qa-vote-first-button qa-vote-up-button"> 
-            <input title="Click to vote down" name="vote_75406_-1_q75406" type="submit" value="–" class="qa-vote-second-button qa-vote-down-button"> 
-          </div>
-          <div class="qa-vote-count qa-vote-count-net">
-            <span class="qa-netvote-count">
-              <span class="qa-netvote-count-data">
-                <%= @question.votes.count %>
-              </span>
-              <span class="qa-netvote-count-pad"> votes <meta itemprop="upvoteCount" content="0">
-              </span>
-            </span>
-          </div>
-          <div class="qa-vote-clear">
-          </div>
+    <div class="qa-q-view-stats">
+      <div class="qa-voting qa-voting-net" id="voting_75406">
+        <div class="qa-vote-buttons qa-vote-buttons-net">
+          <input title="Click to vote up" name="vote_75406_1_q75406" type="submit" value="+" class="qa-vote-first-button qa-vote-up-button"> 
+          <input title="Click to vote down" name="vote_75406_-1_q75406" type="submit" value="–" class="qa-vote-second-button qa-vote-down-button"> 
         </div>
-        <span class="qa-view-count">
-          <span class="qa-view-count-data">
-            <%= @question.view %>
+        <div class="qa-vote-count qa-vote-count-net">
+          <span class="qa-netvote-count">
+            <span class="qa-netvote-count-data">
+              <%= @question.votes.count %>
+            </span>
+            <span class="qa-netvote-count-pad"> votes <meta itemprop="upvoteCount" content="0">
+            </span>
           </span>
-          <span class="qa-view-count-pad"> views</span>
-        </span>
+        </div>
       </div>
-    </form>
+      <span class="qa-a-count qa-a-count-zero">
+        <span class="qa-a-count-data">
+          <%= @question.answers.count%>
+        </span>
+        <span class="qa-a-count-pad"> answers</span>
+      </span>
+      <span class="qa-view-count">
+        <span class="qa-view-count-data">
+          <%= @question.view %>
+        </span>
+        <span class="qa-view-count-pad"> views</span>
+      </span>
+    </div>
     <div class="qa-q-view-main">
       <span class="qa-q-view-avatar-meta">
         <span class="qa-q-view-meta">
