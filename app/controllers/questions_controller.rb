@@ -6,15 +6,10 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @question.tags.build
   end
     
   def show
     @question = Question.includes(:tags).find(params[:id])
-  end
-    
-  def show
-    @question = Question.find(params[:id])
   end
 
   def create

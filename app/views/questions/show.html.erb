@@ -67,6 +67,11 @@
         </ul>
       </div>
       <div class="qa-q-view-buttons">
+        <% if !logged_in? %>
+          <div id="target2" class="collapse" >
+            <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a comment.</h2>
+          </div>
+        <% end %>
         <td class="qa-form-wide-data">
           <button class="btn" data-toggle="collapse" data-target="#target">
             comment
@@ -75,6 +80,8 @@
         <td class="qa-form-wide-data">
           <button class="btn" data-toggle="collapse" data-target="#target">
             answer
+          <button class="btn" data-toggle="collapse" data-target="#target2">
+            commnet
           </button>
         </td>
         <% unless logged_in? %>
@@ -83,6 +90,8 @@
           </div>
         <% end %>
       </div>
+    </div>
+    <div class="qa-q-view-clear">
     </div>
   </div>
 </div>
