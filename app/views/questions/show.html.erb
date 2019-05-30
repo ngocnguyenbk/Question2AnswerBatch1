@@ -56,29 +56,38 @@
       </span>
       <div class="qa-q-view-content qa-post-content">
         <div itemprop="text">
-          <%= @question.content %>
+          <%= sanitize @question.content %>
         </div>
       </div>
       <div class="qa-q-view-tags">
         <ul class="qa-q-view-tag-list">
-          <li class="qa-q-view-tag-item"><a href="../tag/hidden-posts" rel="tag" class="qa-tag-link">hidden-posts</a></li>
+          <li class="qa-q-view-tag-item">
+            <% (@question.tags).each do |tag| %>
+              <%= link_to tag.content, "#{tag.content}", class: "qa-tag-link" %>
+            <% end %>
+          </li>
         </ul>
       </div>
       <div class="qa-q-view-buttons">
+        <% if !logged_in? %>
+          <div id="target2" class="collapse" >
+            <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a comment.</h2>
+          </div>
+        <% end %>
         <td class="qa-form-wide-data">
           <button class="btn" data-toggle="collapse" data-target="#target">
             answer
           </button>
         </td>
         <td class="qa-form-wide-data">
-          <button class="btn" data-toggle="collapse" data-target="#target">
+          <button class="btn" data-toggle="collapse" data-target="#target2">
             commnet
           </button>
         </td>
       </div>
       <% if !logged_in? %>
         <div id="target" class="collapse">
-          <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a comment.</h2>
+          <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a answer.</h2>
         </div>
       <% end %>
     </div>
