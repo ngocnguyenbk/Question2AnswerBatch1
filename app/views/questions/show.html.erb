@@ -22,13 +22,13 @@
             </span>
           </span>
         </div>
-        <span class="qa-view-count">
-          <span class="qa-view-count-data">
-            <%= @question.view %>
-          </span>
-          <span class="qa-view-count-pad"> views</span>
-        </span>
       </div>
+      <span class="qa-a-count qa-a-count-zero">
+        <span class="qa-a-count-data">
+          <%= @question.answers.count%>
+        </span>
+        <span class="qa-a-count-pad"> answers</span>
+      </span>
       <span class="qa-view-count">
         <span class="qa-view-count-data">
           <%= @question.view %>
