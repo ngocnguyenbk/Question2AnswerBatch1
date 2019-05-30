@@ -1,2 +1,141 @@
-<h1>StaticPage#index</h1>
-<p>Find me in app/views/static_page/home.html.erb</p>
+<body class="qa-template-unanswered qa-theme-snowflat qa-body-js-off">
+  <div id="qam-topbar" class="clearfix">
+  </div> 
+  <div class="qam-ask-search-box">
+    <div class="qam-ask-mobile"><a href="./ask" class="turquoise">Ask a Question</a></div>
+    <div class="qam-search-mobile turquoise" id="qam-search-mobile"></div>
+  </div>
+  <div class="qam-search turquoise the-top" id="the-top-search">
+    <div class="qa-search">
+      <form method="get" action="./search">
+        <input type="text" placeholder="Search..." name="q" value="" class="qa-search-field">
+        <input type="submit" value="Search" class="qa-search-button">
+      </form>
+    </div>
+  </div>
+  <div class="qa-body-wrapper">
+    <div class="qa-main-wrapper">
+      <div class="qa-main">
+        <div class="qa-widgets-main qa-widgets-main-top">
+          <div class="qa-widget-main qa-widget-main-top">
+            <div class="qa-ask-box">
+              <form method="post" actioon="./ask?cat=">
+                <table class="qa-form-tall-table">
+                  <tbody>
+                    <tr style="vertical-align: middle;">
+                      <td class="qa-form-tall-label">Ask&nbsp;a&nbsp;question: </td>
+                      <td class="qa-from-tall-data">
+                        <input name="title" type="text" class="qa-form-tall-text">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="qa-main-heading">
+          <%= link_to "Recent questions and answers", root_path, style: "color: white" %>
+          <i class="fa fa-rss qam-title-rss"></i>
+        </div>
+        <div class="qa-q-list">
+          <%= render partial: "questions/questions", collection: @questions, as: :questions %>
+          <%= will_paginate @questions %>
+        </div>
+      </div> 
+      <div id="qam-sidepanel-toggle"><i class="icon-left-open-big"></i></div>
+      <div class="qa-sidepanel" id="qam-sidepanel-mobile">
+        <div class="qam-search turquoise ">
+          <div class="qa-search">
+            <form method="get" action="./search">
+              <input type="text" placeholder="Search..." name="q" value="" class="qa-search-field">
+              <input type="submit" value="Search" class="qa-search-button">
+            </form>
+          </div>
+        </div>
+        <div class="qa-sidebar wet-asphalt">
+          <div>
+            <p>Welcome to the Q&amp;A site for <a href="/">Question2Answer</a>.
+              <p>If you have a question about Q2A, please <a href="/qa/ask">ask in English</a>.
+                <p>To report a bug, please create a <a href="https://github.com/q2a/question2answer/issues">new issue on Github</a> or ask a question here with the <a href="/qa/tag/bug" class="qa-tag-link">bug</a> tag.
+                  <p>If you just want to try Q2A, please <a href="http://demo.question2answer.org/">use the demo site</a>.
+          </div>
+        </div> 
+        <div class="qa-widgets-side qa-widgets-side-low">
+          <div class="qa-widget-side qa-widget-side-low">
+            <h2>Categories</h2>
+            <ul class="qa-nav-cat-list qa-nav-cat-list-1">
+              <li class="qa-nav-cat-item qa-nav-cat-all">
+                <a href="./" class="qa-nav-cat-link qa-nav-cat-selected">All categories</a>
+              </li>
+              <li class="qa-nav-cat-item qa-nav-cat-core">
+                <a href="./core" class="qa-nav-cat-link" title="Questions about the Question2Answer platform.">Q2A Core</a>
+                <span class="qa-nav-cat-note"></span>
+              </li>
+              <li class="qa-nav-cat-item qa-nav-cat-plugins">
+                <a href="./plugins" class="qa-nav-cat-link" title="Questions about plugins created for Q2A.">Plugins</a>
+                <span class="qa-nav-cat-note"></span>
+              </li>
+              <li class="qa-nav-cat-item qa-nav-cat-themes">
+                <a href="./themes" class="qa-nav-cat-link" title="Questions about third-party themes.">Themes</a>
+                <span class="qa-nav-cat-note"></span>
+              </li>
+            </ul>
+            <div class="qa-nav-cat-clear">
+            </div>
+          </div>
+          <div class="qa-widget-side qa-widget-side-low">
+            <div class="qa-activity-count">
+              <p class="qa-activity-count-item">
+                <span class="qa-activity-count-data">1.2k</span> questions
+              </p>
+              <p class="qa-activity-count-item">
+                <span class="qa-activity-count-data">3k</span> answers
+              </p>
+              <p class="qa-activity-count-item">
+                <span class="qa-activity-count-data">2.4k</span> comments
+              </p>
+              <p class="qa-activity-count-item">
+                <span class="qa-activity-count-data">5k</span> users
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="qa-feed">
+          <a href="./feed/unanswered.rss">
+            <i class="fa fa-rss"></i>
+            Recent questions
+          </a>
+      </div> 
+    </div> 
+  </div> 
+  <div class="qam-footer-box">
+    <div class="qam-footer-row">
+    </div> 
+    <div class="qa-footer">
+      <div class="qa-nav-footer">
+        <ul class="qa-nav-footer-list">
+          <li class="qa-nav-footer-item qa-nav-footer-custom-4">
+            <a href="https://www.question2answer.org/feedback.php" class="qa-nav-footer-link">Send feedback</a>
+          </li>
+          <li class="qa-nav-footer-item qa-nav-footer-custom-3">
+            <a href="http://demo.question2answer.org/" class="qa-nav-footer-link">Demo sandbox</a>
+          </li>
+          <li class="qa-nav-footer-item qa-nav-footer-custom-5">
+            <a href="http://wiki.question2answer.org/" class="qa-nav-footer-link">Q2A Wiki</a>
+          </li>
+        </ul>
+        <div class="qa-nav-footer-clear">
+        </div>
+      </div>
+      <div class="qa-attribution">
+        Snow Theme by <a href="http://www.q2amarket.com">Q2A Market</a>
+      </div>
+      <div class="qa-attribution">
+        Powered by <a href="http://www.question2answer.org/">Question2Answer</a>
+      </div>
+      <div class="qa-footer-clear">
+      </div>
+    </div> 
+  </div> 
+</body>

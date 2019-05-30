@@ -256,6 +256,8 @@ body{
         padding: 8px 52px 8px 20px;
         background: #3498db;
         color: #fff;
+        color: #fcf8e3;
+
     }
 
     h1 {
@@ -1464,7 +1466,10 @@ body{
       display: inline;
     }
 
-    .qa-tag-link,
+    .qa-tag-link {
+      margin:0 2px;
+    }
+
     .qa-widget-side .qa-q-view-tag-item {
       background: #e67e22;
       color: #fff !important;
@@ -2073,12 +2078,18 @@ body{
 
     .qa-form-tall-label {
       padding: 5px 0 0;
+      width: 3px;
+      padding:8px; 
+      white-space:nowrap; 
+      text-align:right;
     }
 
     .qa-form-tall-data {
-      padding: 5px 0;
+      padding: 8px 0;
     }
-
+    
+    .qa-form-tall-table,
+    
     .qa-form-wide-label {
       padding-right: 5px;
     }
@@ -3457,6 +3468,7 @@ body{
     .qa-ask-box .qa-form-tall-text {
       width: 100% !important;
       margin: 0 !important;
+      background-color: #34495e;
     }
 
     @media (max-width: 979px) {
