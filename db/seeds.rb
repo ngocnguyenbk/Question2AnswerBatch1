@@ -35,3 +35,6 @@ user_id = User.all.to_a.sample.id
 voteable_type = "Questions"
 voteable_id = Question.all.to_a.sample.id
 questions.each { |question| question.votes.create!(voteable_type: voteable_type, voteable_id: voteable_id, user_id: user_id)}
+
+content = Faker::Lorem.sentence(5)
+questions.each { |question| question.answers.create!(user_id: user_id, content:content)}
