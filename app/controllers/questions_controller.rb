@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    @question.tags.build
   end
 
   def create
@@ -20,6 +21,6 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:content, :title, tags_attributes: [:id, :content])
+    params.require(:question).permit(:content, :title, tags_attributes: [:id, :content, :_destroy])
   end
 end

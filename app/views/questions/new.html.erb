@@ -15,7 +15,19 @@
       </tr>
       <tr>
         <td class="qa-form-tall-data">
-          <%= f.text_field :title, placeholder: "Question title..." %>
+          <%= f.text_field :title, placeholder: "Question title...", :size => 100 %>  
+        </td>
+      </tr>
+      <tr>
+        <td class="qa-form-tall-data">
+          <span id="similar"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="qa-form-tall-data">
+          <div class="qa-form-tall-note">
+            <div id="category_note"></div>
+          </div>
         </td>
       </tr>
       <tr>
@@ -33,26 +45,28 @@
           Tags - use hyphens to combine words:
         </td>
       </tr>
+      <tbody class="fields">
+        <%= f.fields_for :tags do |builder| %>
+          <%= render "tag", f: builder %>
+        <% end %>
+      </tbody>
+    </table>
+    <div>
+      <table class="qa-form-tall-table">
       <tr>
-        <td class="qa-form-tall-data">
-          <%= f.fields_for :tag do |ff| %>
-          <tr>
-            <td class="qa-form-tall-data">
-            <%= ff.text_field :content, placeholder: "Tag.." %>
-            </td>
-          </tr>
-          <% end %>
+        <td>
+          <%= link_to_add_row("Add more Tag", f, :tags, class: "btn btn-primary") %>
         </td>
       </tr>
       <tbody>
         <tr>
           <td colspan="1" class="qa-form-tall-buttons">
-            <%= f.submit "Post", class: "btn btn-primary" %>
+            <%= f.submit "Post", class: "btn btn-primary btn-lg btn-block" %>
           </td>
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </div>
 <% end %>
-
