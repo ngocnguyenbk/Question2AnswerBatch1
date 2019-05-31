@@ -57,7 +57,7 @@
       </div>
       <div class="qa-q-view-tags">
         <ul class="qa-q-view-tag-list">
-          <%= render partial: "tags/tag", collention: @question.tags, as: :tag %>
+          <%= render @question.tags %>
         </ul>
       </div>
       <div class="qa-q-view-buttons">
