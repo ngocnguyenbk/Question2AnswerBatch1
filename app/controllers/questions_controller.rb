@@ -8,6 +8,10 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @question.tags.build
   end
+    
+  def show
+    @question = Question.includes(:tags).find(params[:id])
+  end
 
   def create
     @question = current_user.questions.build(question_params)

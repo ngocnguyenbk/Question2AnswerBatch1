@@ -1,0 +1,82 @@
+<div class="qa-main-heading">
+  <h1>
+    <span itemprop="name">
+      <%= link_to "#{@question.title}", question_path(@question)%>
+    </span>
+  </h1>
+</div>
+<div class="qa-part-q-view">
+  <div class="qa-q-view" id="q75406">
+    <div class="qa-q-view-stats">
+      <div class="qa-voting qa-voting-net" id="voting_75406">
+        <div class="qa-vote-buttons qa-vote-buttons-net">
+          <input title="Click to vote up" name="vote_75406_1_q75406" type="submit" value="+" class="qa-vote-first-button qa-vote-up-button"> 
+          <input title="Click to vote down" name="vote_75406_-1_q75406" type="submit" value="–" class="qa-vote-second-button qa-vote-down-button"> 
+        </div>
+        <div class="qa-vote-count qa-vote-count-net">
+          <span class="qa-netvote-count">
+            <span class="qa-netvote-count-data">
+              <%= @question.votes.count %>
+            </span>
+            <span class="qa-netvote-count-pad"> votes <meta itemprop="upvoteCount" content="0">
+            </span>
+          </span>
+        </div>
+      </div>
+      <span class="qa-view-count">
+        <span class="qa-view-count-data">
+          <%= @question.view %>
+        </span>
+        <span class="qa-view-count-pad"> views</span>
+      </span>
+    </div>
+    <div class="qa-q-view-main">
+      <span class="qa-q-view-avatar-meta">
+        <span class="qa-q-view-meta">
+          <%= link_to "asked", question_path(@question) %>
+          <span class="qa-q-view-when">
+            <span class="qa-q-view-when-data">
+              <%= time_ago_in_words(@question.created_at) %>
+            </span>
+            <span class="qa-q-view-when-pad"> ago</span>
+          </span>
+          <span class="qa-q-view-who">
+            <span class="qa-q-view-who-pad">by </span>
+            <span class="qa-q-view-who-data">
+              <span itemprop="name">
+                <%= link_to "#{@question.user.username}", user_path(@question.user) %>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>
+      <div class="qa-q-view-content qa-post-content">
+        <div itemprop="text">
+          <%= sanitize @question.content %>
+        </div>
+      </div>
+      <div class="qa-q-view-tags">
+        <ul class="qa-q-view-tag-list">
+          <%= render @question.tags %>
+        </ul>
+      </div>
+      <div class="qa-q-view-buttons">
+        <td class="qa-form-wide-data">
+          <button class="btn" data-toggle="collapse" data-target="#target">
+            comment
+          </button>
+        </td>
+        <td class="qa-form-wide-data">
+          <button class="btn" data-toggle="collapse" data-target="#target">
+            answer
+          </button>
+        </td>
+        <% unless logged_in? %>
+          <div id="target" class="collapse">
+            <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a answer.</h2>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
