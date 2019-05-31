@@ -57,27 +57,22 @@
       </div>
       <div class="qa-q-view-tags">
         <ul class="qa-q-view-tag-list">
-          <%= render "tags", collection: @question %>
+          <%= render partial: "tags/tag", collention: @question.tags, as: :tag %>
         </ul>
       </div>
       <div class="qa-q-view-buttons">
-        <% unless logged_in? %>
-          <div id="target" class="collapse">
-            <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a comment.</h2>
-          </div>
-        <% end %>
         <td class="qa-form-wide-data">
           <button class="btn" data-toggle="collapse" data-target="#target">
             comment
           </button>
         </td>
         <td class="qa-form-wide-data">
-          <button class="btn" data-toggle="collapse" data-target="#target2">
+          <button class="btn" data-toggle="collapse" data-target="#target">
             answer
           </button>
         </td>
         <% unless logged_in? %>
-          <div id="target2" class="collapse">
+          <div id="target" class="collapse">
             <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a answer.</h2>
           </div>
         <% end %>
