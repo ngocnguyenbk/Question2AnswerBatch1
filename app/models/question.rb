@@ -8,4 +8,10 @@ class Question < ApplicationRecord
   
   validates :title, presence: true, length: { maximum: 100 }
   validates :content, presence: true
+
+  scope :search_scope, ->(text) {where("title LIKE '%#{text}%' OR content LIKE '%#{text}%'")}
+
+  # def self.search(search)
+  # 	where("title LIKE ?", "%#{search}%")
+  # end
 end

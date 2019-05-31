@@ -1,0 +1,47 @@
+<div class="qa-nav-sub">
+  <ul class="qa-nav-sub-list">
+    <li class="qa-nav-sub-item qa-nav-sub-recent">
+      <%= link_to "Recent", questions_path(order: 'recent') %>&emsp;
+    </li>
+    <li class="qa-nav-sub-item qa-nav-sub-hot">
+      <%= link_to "Hot!", questions_path(order: 'hot') %>&emsp;
+    </li>
+    <li class="qa-nav-sub-item qa-nav-sub-votes">
+      <%= link_to "Most votes", questions_path %>&emsp;
+    </li>
+    <li class="qa-nav-sub-item qa-nav-sub-answers">
+      <%= link_to "Most answers", questions_path %>&emsp;
+    </li>
+    <li class="qa-nav-sub-item qa-nav-sub-views">
+      <%= link_to "Most views", questions_path %>&emsp;
+    </li>
+  </ul>
+  <div class="qa-nav-sub-clear">
+  </div>
+</div>
+<div class="qa-widgets-main qa-widgets-main-top">
+  <div class="qa-widget-main qa-widget-main-top">
+    <div class="qa-ask-box">
+      <form method="post" action="./ask?cat=">
+        <table class="qa-form-tall-table" style="width:100%">
+          <tbody>
+            <tr style="vertical-align:middle;">
+              <td class="qa-form-tall-label" style="width: 1px; padding:8px; white-space:nowrap; text-align:right;">
+                Ask&nbsp;a&nbsp;question:
+              </td>
+              <td class="qa-form-tall-data" style="padding:8px;">
+                <input name="title" type="text" class="qa-form-tall-text" style="width:95%;">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="hidden" name="doask1" value="1">
+      </form>
+    </div>
+  </div>
+</div>
+<div class="qa-main-heading">
+  <h1>
+    Recent questions
+  </h1>
+</div>

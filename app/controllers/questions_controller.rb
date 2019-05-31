@@ -22,6 +22,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def index
+    # @questions = Question.search(params[:search]).order(created_at: :desc).paginate(page: params[:page],  per_page: 10)
+    @questions = (Question.search_scope params[:search]).paginate(page: params[:page],  per_page: 10)
+  end
+
   private
   def question_params
     params.require(:question).permit(:content, :title, tags_attributes: [:id, :content, :_destroy])
