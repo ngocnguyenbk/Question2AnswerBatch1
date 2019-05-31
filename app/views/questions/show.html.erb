@@ -1,10 +1,3 @@
-<% register = capture do %>
-  <% unless logged_in? %>
-    <div id="target" class="collapse">
-      <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a answer.</h2>
-    </div>
-  <% end %>
-<% end %>
 <div class="qa-main-heading">
   <h1>
     <span itemprop="name">
@@ -72,17 +65,26 @@
         </ul>
       </div>
       <div class="qa-q-view-buttons">
-        <%= register %>
+        <% unless logged_in? %>
+          <div id="target" class="collapse">
+            <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a comment.</h2>
+          </div>
+        <% end %>
         <td class="qa-form-wide-data">
           <button class="btn" data-toggle="collapse" data-target="#target">
-            commet
+            comment
           </button>
         </td>
         <td class="qa-form-wide-data">
-          <button class="btn" data-toggle="collapse" data-target="#target">
+          <button class="btn" data-toggle="collapse" data-target="#target2">
             answer
           </button>
         </td>
+        <% unless logged_in? %>
+          <div id="target2" class="collapse">
+            <h2>Please <%= link_to "Login", login_path %> or <%= link_to "Resign", new_user_path %> to add a answer.</h2>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
