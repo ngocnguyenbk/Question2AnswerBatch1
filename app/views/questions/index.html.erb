@@ -1,1 +1,9 @@
-<%= render "shared/questions", questions: @questions%>  
+<div class="qa-main-heading">
+  <h1>
+    Result for : <%= params[:search] %>
+  </h1>
+</div>
+<div class="qa-q-list">
+  <%= render partial: "questions", collection: @questions %>
+  <%= will_paginate @questions %>
+</div>

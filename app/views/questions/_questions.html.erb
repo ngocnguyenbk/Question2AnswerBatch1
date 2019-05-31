@@ -1,49 +1,48 @@
-
-  <div class="qa-q-list-item" id="q75385">
-    <div class="qa-q-item-stats">
-      <div class="qa-voting qa-voting-net" id="voting_75385">
-        <div class="qa-vote-buttons qa-vote-buttons-net">
-          <input title="Click to vote upupgrade" name="vote_75385_1_q75385" type="submit" value="+" class="qa-vote-first-button qa-vote-up-button">
-          <input title="Click to vote down" name="vote_75385_-1_q75385" type="submit" value="–" class="qa-vote-second-button qa-vote-down-button">
-        </div>
-        <div class="qa-vote-count qa-vote-count-net">
-          <span class="qa-netvote-count">
-            <span class="qa-netvote-count-data">0</span><span class="qa-netvote-count-pad"> votes</span>
-          </span>
-        </div>
+<div class="qa-q-list-item" id="q75385">
+  <div class="qa-q-item-stats">
+    <div class="qa-voting qa-voting-net" id="voting_75385">
+      <div class="qa-vote-buttons qa-vote-buttons-net">
+        <input title="Click to vote upupgrade" name="vote_75385_1_q75385" type="submit" value="+" class="qa-vote-first-button qa-vote-up-button">
+        <input title="Click to vote down" name="vote_75385_-1_q75385" type="submit" value="–" class="qa-vote-second-button qa-vote-down-button">
       </div>
-      <span class="qa-a-count qa-a-count-zero">
-        <span class="qa-a-count-data">0</span><span class="qa-a-count-pad"> answers</span>
-      </span>
-      <span class="qa-view-count">
-        <span class="qa-view-count-data"><%= questions.view %></span><span class="qa-view-count-pad"> views</span>
-      </span>
+      <div class="qa-vote-count qa-vote-count-net">
+        <span class="qa-netvote-count">
+          <span class="qa-netvote-count-data">0</span><span class="qa-netvote-count-pad"> votes</span>
+        </span>
+      </div>
     </div>
-    <div class="qa-q-item-main">
-      <div class="qa-q-item-title">
-        <span title=""><%= link_to "#{questions.title}", question_path(questions)%></span>
-      </div>
-      <span class="qa-q-item-avatar-meta">
-        <span class="qa-q-item-meta">
-          <span class="qa-q-item-what">asked</span>
-          <span class="qa-q-item-when">
-            <span class="qa-q-item-when-data"><%= time_ago_in_words(questions.created_at) %></span><span class="qa-q-item-when-pad"> ago</span>
-          </span>
-          <span class="qa-q-item-who">
-            <span class="qa-q-item-who-pad">by </span>
-            <span class="qa-q-item-who-data">
-              <%= link_to "#{questions.user.username}", user_path(questions.user) %>
-            </span>
+    <span class="qa-a-count qa-a-count-zero">
+      <span class="qa-a-count-data">0</span><span class="qa-a-count-pad"> answers</span>
+    </span>
+    <span class="qa-view-count">
+      <span class="qa-view-count-data"><%= questions.view %></span><span class="qa-view-count-pad"> views</span>
+    </span>
+  </div>
+  <div class="qa-q-item-main">
+    <div class="qa-q-item-title">
+      <span title=""><%= link_to "#{questions.title}", question_path(questions)%></span>
+    </div>
+    <span class="qa-q-item-avatar-meta">
+      <span class="qa-q-item-meta">
+        <span class="qa-q-item-what">asked</span>
+        <span class="qa-q-item-when">
+          <span class="qa-q-item-when-data"><%= time_ago_in_words(questions.created_at) %></span><span class="qa-q-item-when-pad"> ago</span>
+        </span>
+        <span class="qa-q-item-who">
+          <span class="qa-q-item-who-pad">by </span>
+          <span class="qa-q-item-who-data">
+            <%= link_to "#{questions.user.username}", user_path(questions.user) %>
           </span>
         </span>
       </span>
-      <div class="qa-q-item-tags">
-        <ul class="qa-q-item-tag-list">
-          <li class="qa-q-item-tag-item"><a href="./tag/upgrade" class="qa-tag-link">upgrade</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="qa-q-item-clear">
+    </span>
+    <div class="qa-q-item-tags">
+      <ul class="qa-q-item-tag-list">
+        <li class="qa-q-item-tag-item"><a href="./tag/upgrade" class="qa-tag-link">upgrade</a></li>
+      </ul>
     </div>
   </div>
+  <div class="qa-q-item-clear">
+  </div>
+</div>
 
