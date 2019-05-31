@@ -1,9 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create]
 
-  def index
-  end
-
   def new
     @question = Question.new
   end
@@ -23,7 +20,6 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    # @questions = Question.search(params[:search]).order(created_at: :desc).paginate(page: params[:page],  per_page: 10)
     @questions = (Question.search_scope params[:search]).paginate(page: params[:page],  per_page: 10)
   end
 
