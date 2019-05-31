@@ -11,7 +11,4 @@ class Question < ApplicationRecord
 
   scope :search_scope, ->(text) {where("title LIKE '%#{text}%' OR content LIKE '%#{text}%'")}
 
-  # def self.search(search)
-  # 	where("title LIKE ?", "%#{search}%")
-  # end
 end
